@@ -1,0 +1,42 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO LDO
+  CLASS BLOCK ;
+  FOREIGN LDO 0 0 ;
+  ORIGIN 0 0 ;
+  SIZE 50 BY 50 ;
+  SYMMETRY X Y ;
+  SITE core ;
+
+  PIN VDD2H
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER M3 ;
+      RECT 0 0 10 10 ;
+    END
+  END VDD2H
+
+  PIN VSS_OLD
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER M3 ;
+      RECT 0 20 10 30 ;
+    END
+  END VSS_OLD
+
+  PIN VDD
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER M3 ;
+      RECT 20 0 30 10 ;
+    END
+  END VDD
+
+END LDO
+
+END LIBRARY
